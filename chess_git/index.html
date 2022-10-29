@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess prototype</title>
+    <link rel="shortcut icon" href="pawns/bishop.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- noscript -->
+    <noscript>
+        It seems like your JavaScript is currently disabled,
+        you need to turn it on for websites functionality.
+    </noscript>
+
+    <div id="options">
+        <input type="radio" name="options" id="sandbox" checked aria-checked="true">
+        <label for="sandbox">
+            Sandbox
+        </label>
+        <input type="radio" name="options" id="find_game" disabled>
+        <label for="find_game">
+            Find a game
+        </label>
+        <input type="radio" name="fischers_chess" id="fishers_chess" disabled>
+        <label for="fischers_chess">Fishers chess</label>
+
+        <h2>Pawn Options:</h2>
+        <i style="color: red;">Coming soon...</i>
+    </div>
+    <div id="chessboard">
+        <!-- rows from whites perspective -->
+        <!-- ---------------------------- -->
+        <!-- row h -->
+        <div class="square square--light">
+            <img src="pawns/rook.png" alt="rook" draggable="true" data-pawn-color="black">
+        </div>
+        <div class="square square--dark">
+            <img src="pawns/knight.png" alt="knight" draggable="true" data-pawn-color="black">
+        </div>
+        <div class="square square--light">
+            <img src="pawns/bishop.png" alt="bishop" draggable="true" data-pawn-color="black">
+        </div>
+        <div class="square square--dark">
+            <img src="pawns/queen.png" alt="queen" draggable="true" data-pawn-color="black">
+        </div>
+        <div class="square square--light">
+            <img src="pawns/king.png" alt="king" draggable="true" data-pawn-color="black">
+        </div>
+        <div class="square square--dark">
+            <img src="pawns/bishop.png" alt="bishop" draggable="true" data-pawn-color="black">
+        </div>
+        <div class="square square--light">
+            <img src="pawns/knight.png" alt="knight" draggable="true" data-pawn-color="black">
+        </div>
+        <div class="square square--dark">
+            <img src="pawns/rook.png" alt="rook" draggable="true" data-pawn-color="black">
+        </div>
+        <!-- row g -->
+        <div class="square square--dark">
+            <img src="pawns/pawn.png" alt="pawn"
+            draggable="true" data-pawn-color="black">
+        </div>
+        <div class="square square--light">
+            <img src="pawns/pawn.png" alt="pawn"
+            draggable="true" data-pawn-color="black">
+        </div>
+        <div class="square square--dark">
+            <img src="pawns/pawn.png" alt="pawn" draggable="true" data-pawn-color="black">
+        </div>
+        <div class="square square--light">
+            <img src="pawns/pawn.png" alt="pawn" draggable="true" data-pawn-color="black">
+        </div>
+        <div class="square square--dark">
+            <img src="pawns/pawn.png" alt="pawn" draggable="true" data-pawn-color="black">
+        </div>
+        <div class="square square--light">
+            <img src="pawns/pawn.png" alt="pawn" draggable="true" data-pawn-color="black">
+        </div>
+        <div class="square square--dark">
+            <img src="pawns/pawn.png" alt="pawn" draggable="true" data-pawn-color="black">
+        </div>
+        <div class="square square--light">
+            <img src="pawns/pawn.png" alt="pawn" draggable="true" data-pawn-color="black">
+        </div>
+        <!-- row f -->
+        <div class="square square--light"></div>
+        <div class="square square--dark"></div>
+        <div class="square square--light"></div>
+        <div class="square square--dark"></div>
+        <div class="square square--light"></div>
+        <div class="square square--dark"></div>
+        <div class="square square--light"></div>
+        <div class="square square--dark"></div>
+        <!-- row e -->
+        <div class="square square--dark"></div>
+        <div class="square square--light"></div>
+        <div class="square square--dark"></div>
+        <div class="square square--light"></div>
+        <div class="square square--dark"></div>
+        <div class="square square--light"></div>
+        <div class="square square--dark"></div>
+        <div class="square square--light"></div>
+        <!-- row d -->
+        <div class="square square--light"></div>
+        <div class="square square--dark"></div>
+        <div class="square square--light"></div>
+        <div class="square square--dark"></div>
+        <div class="square square--light"></div>
+        <div class="square square--dark"></div>
+        <div class="square square--light"></div>
+        <div class="square square--dark"></div>
+        <!-- row c -->
+        <div class="square square--dark"></div>
+        <div class="square square--light"></div>
+        <div class="square square--dark"></div>
+        <div class="square square--light"></div>
+        <div class="square square--dark"></div>
+        <div class="square square--light"></div>
+        <div class="square square--dark"></div>
+        <div class="square square--light"></div>
+        <!-- row b -->
+        <div class="square square--light">
+            <img src="pawns/pawn.png" alt="pawn" draggable="true" data-pawn-color="white">
+        </div>
+        <div class="square square--dark">
+            <img src="pawns/pawn.png" alt="pawn" draggable="true" data-pawn-color="white">
+        </div>
+        <div class="square square--light">
+            <img src="pawns/pawn.png" alt="pawn" draggable="true" data-pawn-color="white">
+        </div>
+        <div class="square square--dark">
+            <img src="pawns/pawn.png" alt="pawn" draggable="true" data-pawn-color="white">
+        </div>
+        <div class="square square--light">
+            <img src="pawns/pawn.png" alt="pawn" draggable="true" data-pawn-color="white">
+        </div>
+        <div class="square square--dark">
+            <img src="pawns/pawn.png" alt="pawn" draggable="true" data-pawn-color="white">
+        </div>
+        <div class="square square--light">
+            <img src="pawns/pawn.png" alt="pawn" draggable="true" data-pawn-color="white">
+        </div>
+        <div class="square square--dark">
+            <img src="pawns/pawn.png" alt="pawn" draggable="true" data-pawn-color="white">
+        </div>
+        <!-- row a -->
+        <div class="square square--dark">
+            <img src="pawns/rook.png" alt="rook" draggable="true" data-pawn-color="white">
+        </div>
+        <div class="square square--light">
+            <img src="pawns/knight.png" alt="knight" draggable="true" data-pawn-color="white">
+        </div>
+        <div class="square square--dark">
+            <img src="pawns/bishop.png" alt="bishop" draggable="true" data-pawn-color="white">
+        </div>
+        <div class="square square--light">
+            <img src="pawns/queen.png" alt="queen" draggable="true" data-pawn-color="white">
+        </div>
+        <div class="square square--dark">
+            <img src="pawns/king.png" alt="king" draggable="true" data-pawn-color="white">
+        </div>
+        <div class="square square--light">
+            <img src="pawns/bishop.png" alt="bishop" draggable="true" data-pawn-color="white">
+        </div>
+        <div class="square square--dark">
+            <img src="pawns/knight.png" alt="knight" draggable="true" data-pawn-color="white">
+        </div>
+        <div class="square square--light">
+            <img src="pawns/rook.png" alt="rook" draggable="true" data-pawn-color="white">
+        </div>
+    </div>
+    <script type="module" src="main.js"></script>
+</body>
+</html>

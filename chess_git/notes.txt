@@ -1,0 +1,46 @@
+Chess in Vanilla JS ❤
+
+TODOS:
+    - CSS chessboard ✅
+    - Make pawns texture ✅
+    - Set pawns on chessboard ✅
+
+    IDEA:
+        I use only WHITE PAWNS as texture,
+        so I can turn them black using FILTER: INVERT(1);
+        when data-pawn-color is set to black
+
+    PROBLEM:
+
+        ⭕ while BLACK PAWNS are dragged
+        FILTER doesn't work and prawn are WHITE
+
+        ⭕ it's possible to CHANGE PAWNS BEHAVIOR
+        using browsers inspector tool and changing
+        the DATA-PAWN-COLOR ATTRIBUTE,
+        which is responsible for pawns 
+        color and BEHAVIOR
+
+    - Drag and drop to move ❌
+        - Pawns need to have specified rules
+        on how they move
+        - Knight can castle only
+        if he didn't move before, and
+        hes not under attak (I will add attack later)
+
+        DRAG IDEA 1 (in Sandbox mode):
+
+            - Dragged object is changing it's top and left position absolute
+            referencing the window innerWidth and innerHeight,
+            Thus the pawn can move anywhere it want's, when pawn is placed
+            I remove IT'S CUREENT POSITION, and i place it in square (div). ⚠      
+
+    - Interraction between pawns ❌
+        - Knight can't be captured by any pawn,
+        and can't take pawn if it's protected
+        - The "en passanr rule":
+
+            If a pawn takes a double step from its starting position
+            and lands directly beside an opposing pawn,
+            then on the next move only the latter may take the first pawn
+            as though it had only advanced a single square

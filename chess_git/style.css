@@ -1,0 +1,95 @@
+:root {
+    /* Chessboard width and height ARE ALWAYS EQUAL ⚠ */
+    --chessboard-width: 800px;
+    --chessboard-height: 800px;
+
+    /* 
+        Chessboards width and height
+        must be exactly as equal as
+        eight squares
+    */
+    --pawn-lenght: 90px;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'system-ui', sans-serif;
+    position: relative;
+
+    background-image:
+        linear-gradient(
+            to right, 
+            #161616, 
+            rgb(51, 8, 17),
+            #161616);
+    background-size: 200%;
+
+    animation: animated-gradient 5s infinite linear;
+}
+
+@keyframes animated-gradient {
+    to {
+        background-position: -200% center;
+    }
+}
+
+input { accent-color: salmon; }
+label { user-select: none; }
+
+#options {
+    visibility: hidden;
+
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    max-width: 350px;
+    padding: 5rem 2rem;
+    border: 2px solid #422b0f;
+    background-color: #eee;
+    z-index: 3;
+}
+
+#chessboard {
+    width: var(--chessboard-width);
+    height: var(--chessboard-height);
+    box-shadow: 0 0 0 2rem #422b0f;
+
+    display: grid;
+    grid-template-columns: repeat(8, 100px);
+    grid-template-rows: repeat(8, 100px);
+}
+
+.square--light {
+    background-color: #aaa !important;
+}
+
+.square--dark {
+    background-color: #161616;
+}
+
+.square {
+    position: relative;
+}
+
+.square:hover img {
+    cursor: grab;
+}
+
+img {
+    width: 56px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    user-select: none;
+}
+
+img[src="pawns/pawn.png"] {
+    width: 46px;
+}
