@@ -1,4 +1,4 @@
-# Lightwest Chess in Vanilla JS ⚡
+# Customizable Chess in Vanilla JS ⚡
 
 ## Features
 
