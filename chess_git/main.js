@@ -1,7 +1,6 @@
 import { Pawns } from './pawns.js';
 
 const pawns = document.querySelectorAll('img');
-const chessboard = document.getElementById('chessboard');
 const squares = document.querySelectorAll('.square');
 
 pawns.forEach(pawn => {
@@ -22,21 +21,47 @@ pawns.forEach(pawn => {
     Dragging and placing pawn mechanics
 */
 
-squares.forEach(square => {
-    square.addEventListener('dragover', dragPawnOver);
-    square.addEventListener('dragenter', dragPawnEnter);
-    square.addEventListener('dragdrop', () => {
-        square.append(pawns[0]);
-        alert('kurwaaa');
-    });
+let draggedItem = null;
+
+function pawnStart() {
+    draggedItem = this;
+    requestAnimationFrame(() => {
+        this.style.display = "none";
+    })
+}
+
+function pawnEnd() {
+    requestAnimationFrame(() => {
+        this.style.display = "block";
+        draggedItem = null;
+        // this.removeChild(draggedItem);
+    })
+}
+
+pawns.forEach(pawn => {
+    pawn.addEventListener('dragstart', pawnStart);
+    pawn.addEventListener('dragend', pawnEnd);
 })
 
-function dragPawnOver(e) {
+function pawnEntersSquare(e) {
     e.preventDefault();
-    console.log(squares[4]);
 }
 
-function dragPawnEnter(e) {
+function pawnOverSquare(e) {
     e.preventDefault();
-    console.log('enters');
 }
+
+function pawnDrop() {
+    // jeśli na polu jest już pionek
+    if (this.firstChild) {
+        // usuń tego pierwszego, aby był tylko drugi
+        requestAnimationFrame(() => {this.removeChild(this.firstChild)});
+    }
+    this.append(draggedItem);
+}
+
+squares.forEach(square => {
+    square.addEventListener('dragenter', pawnEntersSquare);
+    square.addEventListener('dragover', pawnOverSquare);
+    square.addEventListener('drop', pawnDrop);
+})
